@@ -1,11 +1,11 @@
 const path = require("path");
-
-module.exports = {
+ module.exports = {
   mode: "development",
-  entry: "./index.js",
+  entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "public"),
     filename: "main.js",
+    publicPath: '/'
   },
 
   target: "web",
@@ -15,6 +15,7 @@ module.exports = {
     open: true,
     hot: true,
     liveReload: true,
+    historyApiFallback: true //very important for routing the pages
   },
   resolve: {
     extensions: [".js", ".jsx", ".json", ".ts"],
